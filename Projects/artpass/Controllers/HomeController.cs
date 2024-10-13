@@ -1,6 +1,7 @@
 using artpass.Models;
 using Microsoft.AspNetCore.Mvc;
 using System.Diagnostics;
+using match_data_scraper;
 
 namespace artpass.Controllers
 {
@@ -13,9 +14,11 @@ namespace artpass.Controllers
             _logger = logger;
         }
 
-        public IActionResult Index()
+        public async Task<IActionResult> Index()
         {
-            return View();
+            // test scraper 
+           var matches = await TrackLockFetcher.FetchAndParseDataAsync("https://tracklock.gg/players/94516027");
+            return View(matches);
         }
 
         public IActionResult Privacy()
