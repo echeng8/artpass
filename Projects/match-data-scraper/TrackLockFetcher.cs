@@ -6,7 +6,7 @@ using System.Text;
 using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using Newtonsoft.Json;
-using artpass.Models;
+using ArtPassLibrary;
 
 namespace match_data_scraper
 {

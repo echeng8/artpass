@@ -1,7 +1,7 @@
-﻿namespace artpass.Models
+﻿namespace ArtPassLibrary
 {
-    public class DeadlockMatch
-    {
+     public class DeadlockMatch
+     {
         public int Id { get; set; }
         public bool IsWin { get; set; }
         public DateTime Timestamp { get; set; }
@@ -20,3 +20,4 @@
         }
     }
 }
+

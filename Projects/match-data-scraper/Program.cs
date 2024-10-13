@@ -4,7 +4,7 @@ using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using Newtonsoft.Json;
 using match_data_scraper;
-using artpass.Models;
+using ArtPassLibrary;
 
 var m = await TrackLockFetcher.FetchAndParseDataAsync("https://tracklock.gg/players/94516027"); 
 foreach (DeadlockMatch ma in m)

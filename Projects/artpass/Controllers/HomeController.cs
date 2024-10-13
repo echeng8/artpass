@@ -2,7 +2,8 @@ using artpass.Models;
 using Microsoft.AspNetCore.Mvc;
 using System.Diagnostics;
 using match_data_scraper;
-
+using ArtPassLibrary;
+using Microsoft.AspNetCore.Mvc.Filters;
 namespace artpass.Controllers
 {
     public class HomeController : Controller
@@ -17,8 +18,8 @@ namespace artpass.Controllers
         public async Task<IActionResult> Index()
         {
             // test scraper 
-           var matches = await TrackLockFetcher.FetchAndParseDataAsync("https://tracklock.gg/players/94516027");
-            return View(matches);
+            var results = await TrackLockFetcher.FetchAndParseDataAsync("https://tracklock.gg/players/94516027");
+            return View(results);
         }
 
         public IActionResult Privacy()

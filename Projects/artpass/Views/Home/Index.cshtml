@@ -1,8 +1,30 @@
-﻿@{
+﻿@model IEnumerable<ArtPassLibrary.DeadlockMatch>
+@{
     ViewData["Title"] = "Home Page";
 }
 
 <div class="text-center">
-    <h1 class="display-4">Welcome</h1>
-    <p>Learn about <a href="https://learn.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+    <h1 class="display-4">DEADLOCK ART BATTLEPASS</h1>
+</div>
+<div class="matches">
+    <h2>Match Results</h2>
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Match ID</th>
+                <th>Is Win</th>
+                <th>Username</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var match in Model) // Iterate over each match
+            {
+                <tr>
+                    <td>@match.Id</td>
+                    <td>@match.IsWin</td>
+                    <td>@match.Username</td>
+                </tr>
+            }
+        </tbody>
+    </table>
 </div>
